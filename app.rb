@@ -2,6 +2,6 @@ require "sinatra/base"
 
 class Battle < Sinatra::Base
   get '/' do
-    "Hello from MyApp!"
+    "Hello Battlers!"
   end
 end
