@@ -1,2 +1,3 @@
-require './app.rb'
+require './app'
+
 run Battle
