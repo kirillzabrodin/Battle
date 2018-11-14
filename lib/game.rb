@@ -25,7 +25,23 @@ class Game
   end
 
   def opponent_of(the_player)
-    @players.select { |player| player != the_player }.first
+    @players.detect { |player| player != the_player }
+  end
+
+  def game_over?
+    !!@players.detect { |p| p.dead? == true }
+  end
+
+  def dead_player
+    @players.detect { |p| p.dead? == true }
+  end
+
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
   end
 
 end

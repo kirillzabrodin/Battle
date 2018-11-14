@@ -22,4 +22,14 @@ describe Player do
       expect { kirill.receive_damage }.to change { kirill.hitpoints }.by(-10)
     end
   end
+
+
+  describe "#dead?" do
+    before 'kills Kirill' do
+      6.times {kirill.receive_damage}
+    end
+    it 'returns true if the player is at or below 0 HP' do
+      expect(kirill.dead?).to eq true
+    end
+  end
 end
